@@ -4,8 +4,7 @@
 	[longitude]="lng"
 	[zoom]="zoom"
 	[disableDefaultUI]="false"
-	[zoomControl]="false"
-	(mapClick)="mapClicked($event)">
+	[zoomControl]="false">
 
 	<sebm-google-map-marker [iconUrl]="'../../assets/photos/marker-logo.png'"
 		*ngFor="let m of markers; let i = index"

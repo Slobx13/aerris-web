@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 	logo = '/assets/photos/Logo.png';
-  constructor() { }
 
-  ngOnInit() {
-  }
+	navbarCollapsed = false;
 
+	constructor() { }
+
+	ngOnInit() {}
 }

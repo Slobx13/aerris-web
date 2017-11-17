@@ -1,0 +1,50 @@
+<ngbox></ngbox>
+<div class="container-fluid header">
+	<img src="{{head}}">
+
+	<div class="row header">
+		<h4 class="header">Apartmani</h4>
+
+		<p class="header">
+			U saradnji sa kompanijom Zip Univer D.O.O Užice predložili smo nekoliko idejnih rešenja koje možete pogledati
+			u našoj galeriji. Ukoliko vam se neki dizajn svidi možete ih kontaktirati ili ih angažovati da urade neki drugi dizajn po vašim željama.
+			Takodje na istom mestu možete dobiti i izradu nameštaja po vašim zahtevima.
+		</p>
+	</div>
+</div>
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 image-wrapper" *ngFor="let gallery of apartment.gallery">
+				<div ng-box [src]="'../../../assets/photos/gallery/' + gallery.galerry + '.png'" [image]="true" [style.display.none]="title"  group="group1" style="z-index: 100;cursor: pointer;transition: 0.2s">
+					<img [src]="'../../../assets/photos/gallery/' + gallery.galerry + '-min.png'"
+						 style="width: 100%; height: 100%;padding-top: 20px"
+					>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" style="padding: 0;margin: 0;">
+	<md-card class="example-card " style="background:#1B75BC;color:#F1F2F2">
+		<md-card-header>
+			<md-card-title style="font-size: 18px;font-weight: 300;">Zainteresovani ste ?</md-card-title>
+		</md-card-header>
+		<md-card-content style="margin-left: 20%;margin-right: 20%;">
+			<p style="text-align: center; font-weight: 300;padding: 0 20%;">
+				Ukoliko zaista želite da jedan od novih,
+				luksuznih Aerris apartmana bude vaš
+				možete nas kontaktirati kako bi ste
+				saznali više informacija kao i rezervisali vaš apartman.
+			</p>
+		</md-card-content>
+		<md-card-actions>
+			<button md-raised-button routerLink="../../kontakt">KONTAKTIRAJTE NAS</button>
+		</md-card-actions>
+	</md-card>
+</div>
+<div class="container-fluid san">
+	<h4 class="san">OSTVARITE SVOJ SAN I OBEZBEDITE SEBI LUKSUZNI APARTMAN NA ZLATIBORU</h4>
+</div>
+

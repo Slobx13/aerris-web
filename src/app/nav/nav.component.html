@@ -1,0 +1,52 @@
+<header class="navbar navbar-light navbar-fixed-top navbar-expand-lg">
+
+	<a class="navbar-brand"  [routerLink]="['/']" (click)="navbarCollapsed = false"><img src="{{logo}}"> </a>
+
+	<button class="navbar-toggler navbar-toggler-right" type="button" (click)=" navbarCollapsed = !navbarCollapsed "
+			[attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span
+			[class.navbar-toggler-icon]="!navbarCollapsed"
+			[class.close]="navbarCollapsed"></span>
+	</button>
+
+	<div class="navbar-collapse" [ngbCollapse]="!navbarCollapsed" id="navbarContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item" appDropdown [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+				<a class="nav-link"  role="button" [routerLink]="['/']" (click)="navbarCollapsed = false">Naslovna</a>
+			</li>
+			<li class="nav-item d-inline-block"  ngbDropdown #myDrop="ngbDropdown" [routerLinkActive]="['active']">
+			<a class="nav-link"  role="button" ngbDropdownToggle style="cursor: pointer;user-select: none;"
+			   (click)="navbarCollapsed = true">Projekti <i class="fa fa-caret-down"aria-hidden="true"></i>
+			</a>
+				<div ngbDropdownMenu aria-labelledby="dropdownManual" (click)="navbarCollapsed = false">
+					<button class="dropdown-item " [routerLink] = "['/apartmani']"><i class="fa fa-home" ></i><span>Apartmani</span></button>
+					<button class="dropdown-item" routerLink="materijalizacija"><i class="fa fa-wrench"></i>
+						<span>Materijalizacija</span></button>
+					<button class="dropdown-item" routerLink="garaza"><i class="fa fa-car" style="padding-right: 0"></i>
+						<span>Garaža</span> </button>
+					<button class="dropdown-item" routerLink="investitori"><i class="fa fa-usd" style="padding-right: 5px;padding-left: 10px"></i>
+						<span>Investitor</span></button>
+				</div>
+			</li>
+			<li class="nav-item" [routerLinkActive]="['active']">
+				<a class="nav-link" [routerLink]="['/galerija']" (click)="navbarCollapsed = false">Galerija</a>
+			</li>
+			<li class="nav-item" [routerLinkActive]="['active']">
+				<a class="nav-link" [routerLink]="['/kontakt']" (click)="navbarCollapsed = false">Kontakt</a>
+			</li>
+
+			<li class="nav-item d-lg-none" *ngFor="let component of components" [routerLinkActive]="['active']">
+				<a class="nav-link" [routerLink]="['/components', component.toLowerCase()]" (click)="navbarCollapsed = true">{{ component }}</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav mr-auto lng">
+			<li class="nav-item lng" [routerLinkActive]="['active']">
+				<a class="nav-link lng" [routerLink]="['']" (click)="navbarCollapsed = true">SRB</a>
+			</li>
+			<li class="nav-item lng" [routerLinkActive]="['active']">
+				<a class="nav-link lng"  (click)="navbarCollapsed = true">ENG</a>
+			</li>
+		</ul>
+	</div>
+</header>
+

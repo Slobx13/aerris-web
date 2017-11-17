@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, Renderer, Renderer2} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-aerris',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+	constructor(private router: Router) {
+		this.router.events.subscribe(
+			() => window.scrollTo(0, 0)
+		);
+	}
 }

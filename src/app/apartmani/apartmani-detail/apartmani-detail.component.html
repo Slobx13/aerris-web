@@ -1,0 +1,151 @@
+<ngbox></ngbox>
+<div class="container-fluid">
+	<img class="header" src="../../../assets/photos/header/apartmani.png">
+
+	<div class="row header">
+		<h4 class="header">Apartmani</h4>
+
+		<p class="header">
+			Fusce maximus diam et mauris condimentum eleifend.
+			Donec malesuada quis mi ut faucibus.
+			Cras gravida lectus felis,
+			eu fermentum nunc aliquet id.
+			Suspendisse cursus diam sit amet turpis tempor malesuada.
+		</p>
+	</div>
+</div>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 inline">
+				<i class="fa fa-chevron-left back-button" routerLink=".."></i>
+				<h4 class="id">Apartman #{{apartment.id}}</h4>
+				<p class="type">{{apartment.style}} / {{apartment.type}}</p>
+			</div>
+			<div class="col-sm-12">
+				<hr>
+			</div>
+			<div class="col-sm-12">
+				<p class="style">Osnovne Informacije</p>
+				<p class="arh">
+					Ovaj amartman, povrsine {{apartment?.area}}m<sup>2</sup>, napravljen je u {{apartment?.style}} stilu.
+
+					Ut posuere velit suscipit tellus dictum porta.
+					Fusce elementum enim a luctus mattis. Integer erat enim,
+					aliquam at ligula nec, consectetur dictum ipsum. Ut consequat
+					neque a tellus dignissim condimentum. Nullam molestie vehicula est.
+					Nunc dapibus euismod velit, ac varius erat varius lobortis. Integer
+					ut elementum risus. Fusce sit amet lorem eget nibh ultrices vulputate.
+					Sed id molestie odio, eget porttitor est. Suspendisse quis feugiat mauris,
+					ut porta tellus. Proin eget lacus vel eros bibendum euismod.
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<h4 class="style" style="margin-top: 20px">Tehnička dokumentacija</h4>
+				<img class="plan" [src]="'../../../assets/photos/' + apartment.tehImage + '.png'">
+				<h4 class="style">Pogodnosti Apartmana</h4>
+
+				<ul>
+					<li>
+						<p class="icontxtfalse"><img class="icon" src="../../assets/photos/lift.png">Lift</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/prilagodjenozadecu.png">Prilagodjeno za decu</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/invalid.png">Prilagodjeno za invalide</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/terace.png">Terasa</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/Garaza.png">Garaža</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/Interfon.png">Interfon</p>
+					</li>
+
+					<li>
+						<p class="icontxt"><img class="icon" src="../../assets/photos/Video%20nadzor.png">Video nadzor</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 ">
+				<h4 class="style" style="margin-top: 20px;padding: 0">Specifikacija</h4>
+				<md-card style="margin-top: 20px;margin-bottom: 20px">
+					<div class="row">
+						<p class="spec">Sprat</p>
+						<p class="spec">{{apartment.floor}}</p>
+					</div>
+					<div class="row">
+							<p class="spec">Kvadratura</p>
+							<p class="spec">{{apartment.area}}m² </p>
+					</div>
+					<div class="row">
+							<p class="spec">Stil</p>
+							<p class="spec">{{apartment.style}}</p>
+					</div>
+					<div class="row">
+							<p class="spec">Tip</p>
+							<p class="spec">{{apartment.type}}</p>
+					</div>
+					<div class="row">
+						<p class="spec">Pozicija</p>
+						<p class="spec">{{apartment.posittion}}</p>
+					</div>
+						<button md-raised-button
+								[style.background]="background"
+								[style.cursor]="'default'">
+							{{available}}</button>
+				</md-card>
+
+				<h4 class="style" style="margin-top: 20px;padding: 0">Slike</h4>
+
+				<div class="slike">
+					<div class="img" *ngFor="let image of apartment.images">
+						<div ng-box [src]="'../../../assets/photos/tumb-apartman-detail/' + image.image + '-big.png'" [image]="true" [style.display.none]="title"  group="group1" style="z-index: 100;cursor: pointer;">
+							<img [src]="'../../../assets/photos/tumb-apartman-detail/' + image.image + '.png'">
+						</div>
+
+					</div>
+				</div>
+				<button md-raised-button style="margin-bottom: 40px" routerLink="../../galerija">GALERIJA</button>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid detail"
+		 style="padding: 0;margin: 0;height: auto">
+
+		<md-card class="example-card"
+				 style="background:#1B75BC;color:#F1F2F2">
+
+			<md-card-header>
+				<md-card-title style="font-size: 18px; font-weight: 300;">Zainteresovani ste ?</md-card-title>
+			</md-card-header>
+
+			<md-card-content>
+				<p style="text-align: center; padding: 0 20%; font-weight: 300">
+					Ukoliko zaista želite da jedan od novih,
+					luksuznih Aerris apartmana bude vaš
+					možete nas kontaktirati kako bi ste
+					saznali više informacija kao i rezervisali vaš apartman.
+				</p>
+			</md-card-content>
+
+			<md-card-actions>
+				<button md-raised-button routerLink="../../kontakt">KONTAKTIRAJTE NAS</button>
+			</md-card-actions>
+		</md-card>
+	</div>
+
+	<div class="container-fluid san">
+		<h4 class="san">OSTVARITE SVOJ SAN I OBEZBEDITE SEBI LUKSUZNI APARTMAN NA ZLATIBORU</h4>
+	</div>
+</div>
+

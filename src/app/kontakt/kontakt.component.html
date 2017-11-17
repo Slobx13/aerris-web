@@ -1,0 +1,89 @@
+<div class="container-fluid" style="border-bottom: 1px solid #27AAE1">
+	<app-map></app-map>
+</div>
+<div class="wrapper" style="background: #F1F2F2;height: 100%">
+	<div class="container" style="background: white">
+		<h4 style="color: #1b75bc">KONTAKTIRAJTE AERRIS</h4>
+		<hr>
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+			<div class="row">
+				<div class="col-sm-6">
+					<md-input-container class="example-full-width">
+						<input mdInput placeholder="Vase Ime "
+							   name="name"
+							   id="name"
+							   ngModel
+							   required
+							   #name="ngModel">
+					</md-input-container>
+					<p class="form" *ngIf="!name.valid && name.touched">Molimo vas unesite vaše Ime</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<md-input-container class="example-full-width">
+						<input mdInput
+							   placeholder="Vasa Email Adresa"
+							   name="email"
+							   id="email"
+							   ngModel
+							   required
+							   email
+							   #email="ngModel">
+					</md-input-container>
+					<p class="form" *ngIf="!email.valid  && email.touched">Molimo vas unesite ispravan Email</p>
+				</div>
+				<div class="col-sm-6">
+					<md-input-container class="example-full-width right">
+						<input mdInput placeholder="Tema"
+							   name="subject"
+							   id="subject"
+							   ngModel
+							   required
+							   #subject="ngModel">
+					</md-input-container>
+					<p class="form" *ngIf="!subject.valid && subject.touched">Molimo vas unesite Temu na koju se poruka odnosi</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12" style="text-align: center">
+					<md-input-container class="full-width">
+						<textarea mdInput mdAutosizeMinRows="6"
+								  placeholder="Poruka"
+								  id="message"
+								  name="message"
+								  ngModel
+								  required
+								  #message="ngModel"></textarea>
+					</md-input-container>
+					<p class="form" *ngIf="!message.valid && message.touched">Molimo vas unesite Poruku</p>
+					<button md-raised-button [disabled]="!f.valid">POŠALJITE PORUKU</button>
+					<p class="success" *ngIf="f.valid && submitted==true">VAŠA PORUKA JE USPEŠNO POSLATA</p>
+
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="container-fluid" style="padding: 0;margin: 0;">
+		<md-card class="example-card " style="background:#1B75BC;color:#F1F2F2">
+			<md-card-header>
+				<md-card-title style="font-size: 18px;font-weight: 300;">Idejna rešenja enterijera apartmana Aerris</md-card-title>
+			</md-card-header>
+			<md-card-content style="margin-bottom: 0;">
+				<p style="text-align: center;font-weight: 300;padding: 0 20%;">
+					Pogledajte neke od naših idejnih rešenja za enterijer vašeg novog
+					apartmana koji smo izradili sa kompanijom Zip Univer D.O.O Užice. Za sav nameštaj i dizajn za vaš apartman mozete ih kontaktirati!
+				</p>
+			</md-card-content>
+			<md-card-actions>
+				<button md-raised-button routerLink="../galerija">POGLEDAJTE GALERIJU</button>
+			</md-card-actions>
+		</md-card>
+	</div>
+	<div class="container-fluid san">
+		<h4 class="san">OSTVARITE SVOJ SAN I OBEZBEDITE SEBI LUKSUZNI APARTMAN NA ZLATIBORU</h4>
+	</div>
+</div>
+
+
+

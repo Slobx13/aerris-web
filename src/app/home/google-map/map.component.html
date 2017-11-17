@@ -1,0 +1,36 @@
+
+<sebm-google-map [scrollwheel] = false style="width: 100%;height: 350px"
+	[latitude]="lat"
+	[longitude]="lng"
+	[zoom]="zoom"
+	[disableDefaultUI]="false"
+	[zoomControl]="false"
+	(mapClick)="mapClicked($event)">
+
+	<sebm-google-map-marker [iconUrl]="'../../assets/photos/marker-logo.png'"
+		*ngFor="let m of markers; let i = index"
+		(markerClick)="clickedMarker(m.label, i)"
+		[latitude]="m.lat"
+		[longitude]="m.lng"
+		[label]="m.label"
+		[markerDraggable]="m.draggable"
+		(dragEnd)="markerDragEnd(m, $event)">
+
+		<sebm-google-map-info-window>
+			<strong style="color: #1b75bc;text-align: center">
+				Apartmani Aerris<br>
+				Jovanke Jeftanović<br>
+				Zlatibor
+			</strong>
+		</sebm-google-map-info-window>
+
+	</sebm-google-map-marker>
+
+	<sebm-google-map-circle [latitude]="lat + 0.3" [longitude]="lng"
+							[radius]="5000"
+							[fillColor]="'blue'"
+							[circleDraggable]="true"
+							[editable]="true">
+	</sebm-google-map-circle>
+
+</sebm-google-map>

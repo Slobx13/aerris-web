@@ -1,0 +1,224 @@
+.san {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+.container-fluid {
+	padding: 0;
+}
+.container {
+	position: relative;
+	margin: auto;
+}
+.row {
+	margin-bottom: 40px;
+
+}
+form {
+	padding-bottom: 10px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+hr {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+h4 {
+	font-weight: 400;
+	text-align: center;
+	font-family: Roboto,sans-serif;
+	color: #6D6E71;
+	font-size: 17px;
+	line-height: 22px;
+	padding-top: 40px;
+	&.san {
+		font-size: 17px;
+		line-height: 48px;
+		font-weight: 300;
+		display: table;
+		color: #F1F2F2;
+		background: #231F20;
+
+	}
+}
+
+h4.san {
+	width: 100%;
+}
+
+p.form {
+	color: red;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: Roboto, sans-serif;
+}
+p.success {
+	color: green;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: Roboto, sans-serif;
+	margin-top: 20px;
+}
+md-card-header {
+	display: block;
+}
+
+md-card {
+	/deep/ {
+		.mat-card-title {
+			text-align: center;
+			width: 100%;
+			padding: 0 15px;
+		}
+		.mat-card-content {
+			text-align: center;
+			padding-left: 20%;
+			padding-right: 20%;
+		}
+		.mat-card-header-text {
+			width: 100% ;
+			text-align: center;
+			margin-left: 0;
+		}
+
+		md-card-title.md-card-title{
+			width: 100%;
+			text-align: center;
+		}
+
+		.example-card.message.mat-card {
+			clear:both;
+			margin-top: 50px;
+		}
+		button.mat-raised-button {
+			background:#F1F2F2 ;
+			color:#6D6E71 ;
+			margin-bottom: 20px;
+		}
+		.mat-card-actions {
+			text-align: center;
+		}
+	}
+}
+button.mat-raised-button {
+	color: white;
+	background: #02a8f3;
+	outline: none;
+	font-family: Roboto,sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	margin-top: 20px;
+}
+md-input-container {
+	width: 100%;
+}
+md-input-container.right {
+	float: right;
+}
+.full-width{
+	width: 100%;
+
+}
+
+a {
+	color: #02a8f3;
+	text-decoration: none;
+}
+md-card.example-card.message.mat-card {
+	clear:both;
+}
+
+
+button.mat-raised-button.send {
+	background: #02a8f3;
+	color: white;
+	float: right;
+	margin-top: 40px;
+	outline: none;
+}
+ @media screen and (max-width: 576px){
+	 md-input-container.right {
+		 float: none;
+	 }
+	 button.mat-raised-button.send {
+		 float: none;
+		 width: 100%;
+	 }
+	 p {
+		 text-align: center;
+	 }
+	md-card{
+		/deep/ {
+			.mat-card-title.info {
+				text-align: center !important;
+			}
+
+		}
+	}
+	 md-card {
+		 /deep/ {
+			 .mat-raised-button {
+				 outline: none;
+				 margin-bottom: 20px;
+				 font-family: Roboto, sans-serif;
+				 background: #95989A;
+				 font-weight: 400;
+
+			 }
+			 .mat-card-header-text{
+				 text-align: center;
+				 width: 100%;
+				 font-family: Roboto, sans-serif;
+				 font-size: 18px;
+			 }
+			 .mat-card-avatar {
+				 display: none;
+			 }
+			 .mat-card-actions {
+				 text-align: center;
+			 }
+
+		 }
+	 }
+
+	 md-input-container {
+		 width: 100% !important;
+		 text-align: center;
+		 /deep/ {
+			 .example.full-width.mat-input-container.message {
+
+			 }
+		 }
+	 }
+
+ }
+
+@media screen and (max-width: 1040px){
+	p {
+		padding: 0 5% !important;
+	}
+}
+@media screen and (max-width: 576px){
+	p {
+		padding: 0 !important;
+	}
+	.row {
+		margin-bottom: 0;
+	}
+	.mat-card>.mat-card-actions:last-child {
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+	button.mat-raised-button[_ngcontent-c5] {
+		width: 100%;
+	}
+	h4.san {
+		line-height: 22px;
+		padding: 15px 55px;
+	}
+	md-card[_ngcontent-c5]     .mat-card-content {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}

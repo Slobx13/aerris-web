@@ -38,7 +38,7 @@ export class ApartmaniDetailComponent implements OnInit {
 					this.background = '#008B21';
 					break;
 				case 'Ne' :
-					this.available = 'NEDOSTUPAN';
+					this.available = 'PRODATO';
 					this.background = '#CB000C';
 					break;
 				case 'Rezervisan' :

@@ -16,11 +16,28 @@ export class ApartmaniComponent implements OnInit {
 
 	header = 'http://www.hometec.info/wp-content/uploads/2017/08/elegant-vintage-style-apartment-on-nice-vintage-interior-design-vintage-interior-design-wallpaper-hd-download-for-desktop.jpg';
 	apartmans: Apartman[] = APARTMANS;
+	background: string = 'red';
+
+	hoveredApt: Apartman;
 
 	constructor() { }
 
 	ngOnInit() {
 
+		this.hoveredApt = this.apartmans[0];
+	}
+
+	changeStyle($event) {
+		this.background = $event.type === 'mouseover' ? 'yellow' : 'red';
+	}
+
+	aptHovered(apt: Apartman): void {
+		this.hoveredApt = apt;
+	}
+
+	aptBlur(): void {
+
+		this.hoveredApt = this.apartmans[0];
 	}
 }
 

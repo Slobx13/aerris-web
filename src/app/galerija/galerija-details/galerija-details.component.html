@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 image-wrapper" *ngFor="let gallery of apartment.gallery">
-				<div ng-box [src]="'../../../assets/photos/gallery/' + gallery.galerry + '.png'" [image]="true" [style.display.none]="title"  group="group1" style="z-index: 100;cursor: pointer;transition: 0.2s">
+				<div ng-box [src]="'../../../assets/photos/gallery/' + gallery.galerry + '.png'" [image]="true" [width]="1920" [height]="1080" [style.display.none]="title"  group="group1" style="z-index: 100;cursor: pointer;transition: 0.2s">
 					<img [src]="'../../../assets/photos/gallery/' + gallery.galerry + '-min.png'"
 						 style="width: 100%; height: 100%;padding-top: 20px"
 					>

@@ -5,6 +5,10 @@
 	overflow: hidden;
 	background: rgba(0, 0, 0, 0.5);
 	position: relative;
+	img {
+		height: 100%;
+		width: auto;
+	}
 }
 
 .back-button {
@@ -223,6 +227,13 @@ button.mat-raised-button {
 		margin-bottom: 20px;
 		padding-left: 0 !important;
 
+	}
+
+	.row {
+		padding: 20px 0;
+		.col-sm-6 {
+			padding: 0 0 20px 0;
+		}
 	}
 	md-card-content{
 		/deep/{

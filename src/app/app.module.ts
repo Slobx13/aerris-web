@@ -23,7 +23,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { CardsComponent } from './home/cards-tab/cards-tab.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbTooltip} from '@ng-bootstrap/ng-bootstrap';
 import { CollapseModule } from 'ngx-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
@@ -99,7 +99,7 @@ const appRoutes: Routes = [
 		MdCardModule,
 		BrowserAnimationsModule,
 		Angular2ImageGalleryModule,
-		NgBoxModule,
+		NgBoxModule
 
 	],
 	providers: [

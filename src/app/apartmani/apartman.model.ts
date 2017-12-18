@@ -3,22 +3,22 @@
 		constructor(public id: number,
 					public floor: string,
 					public area: number,
-					public style: ApartmanStyle,
 					public type: ApartmanType,
 					public posittion: ApartmanPosition,
 					public terace: boolean,
+					public room: ApartmanRoom,
 					public available: ApartmanAvailable,
 					public images?: Image[],
 					public mainImage?: string,
 					public tehImage?: string,
+					public highlightImage?: string,
 					public gallery?: Gallery[]) {}
 }
 
-export type ApartmanType = 'Lux' | 'Standard';
+export type ApartmanType =  'Jednosoban' | 'Dvosoban';
+export type ApartmanRoom = 'jedne spavaće' | 'dve spavaće';
 
-export type ApartmanStyle = 'Modern' | 'Etno' | 'Neo Baroque';
-
-export type ApartmanPosition = 'Sever / Istok' | 'Sever / Zapad'  | 'Jug / Zapad';
+export type ApartmanPosition = 'Jug' | 'Jug / Zapad';
 
 export type ApartmanAvailable = 'Da' | 'Ne' | 'Rezervisan';
 
